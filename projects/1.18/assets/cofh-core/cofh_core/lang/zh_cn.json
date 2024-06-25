@@ -190,5 +190,10 @@
   "item.minecraft.tipped_arrow.effect.lightning_resistance": "抗震之箭",
   "item.minecraft.tipped_arrow.effect.love": "丘比特之箭",
   "item.minecraft.tipped_arrow.effect.magic_resistance": "魔抗之箭",
-  "item.minecraft.tipped_arrow.effect.panacea": "灵丹妙箭"
+  "item.minecraft.tipped_arrow.effect.panacea": "灵丹妙箭",
+  "effect.cofh_core.cold_resistance": "寒冷抗性",
+  "info.cofh.unit_mb": "毫升",
+  "info.cofh.unit_mb_t": "毫升/每tick",
+  "info.cofh.unit_rf": "射频",
+  "info.cofh.unit_rf_t": "RF/每tick"
 }

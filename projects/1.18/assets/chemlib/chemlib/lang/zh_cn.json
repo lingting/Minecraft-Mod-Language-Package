@@ -1050,5 +1050,12 @@
   "itemGroup.chemlib.compounds": "化合物",
   "itemGroup.chemlib.elements": "元素",
   "itemGroup.chemlib.metals": "金属",
-  "itemGroup.chemlib.misc": "杂项"
+  "itemGroup.chemlib.misc": "杂项",
+  "chemlib.effect.on_hit": "击中效果",
+  "chemlib.jei.compound.calcium_chloride.description": "这种盐常被用作除冰剂，因为它吸水时会发热。它吸湿的能力也使其在除湿器中有用。",
+  "chemlib.jei.compound.calcium_sulfide.description": "称为矿物蓝铜矿，是一种罕见的矿物，可在陨石中发现-虽然它可以轻易合成，通常作为燃煤的副产品。",
+  "chemlib.jei.compound.graphite.description": "一种结晶形态的碳。它在铅笔、润滑剂中使用，在高压下可以形成钻石。",
+  "item.chemlib.graphite_dust": "石墨粉末",
+  "item.chemlib.mercury_sulfide_dust": "硫化汞粉末",
+  "item.chemlib.polyvinyl_chloride_plate": "聚氯乙烯板"
 }
