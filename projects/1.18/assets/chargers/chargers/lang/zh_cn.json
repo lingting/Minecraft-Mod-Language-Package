@@ -10,5 +10,8 @@
   "chargers.gui.energy": "%s/%s FE",
   "chargers.gui.io": "I/O：%s FE/t",
   "chargers.gui.max_in": "最大输入：%s FE/t",
-  "chargers.gui.max_out": "最大输出：%s FE/t"
+  "chargers.gui.max_out": "最大输出：%s FE/t",
+  "block.chargers.charger_t4": "四级充电器",
+  "block.chargers.wireless_charger.desc": "可以通过红石信号进行禁用",
+  "itemGroup.chargers": "充电器"
 }

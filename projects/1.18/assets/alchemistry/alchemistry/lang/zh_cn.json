@@ -1,1 +1,12 @@
-{}
+{
+  "alchemistry.container.close_recipe_select": "关闭配方选择",
+  "alchemistry.container.current_recipe": "当前配方：",
+  "alchemistry.container.disable_autobalance": "禁用自动平衡",
+  "alchemistry.container.enable_autobalance": "启用自动平衡",
+  "alchemistry.container.open_recipe_select": "打开配方选择",
+  "alchemistry.container.required_input": "所需输入物品：",
+  "alchemistry.container.search": "搜索...",
+  "alchemistry.container.select_recipe": "选择配方：",
+  "alchemistry.patchouli.book_name": "炼金术实验室目录",
+  "alchemistry.patchouli.landing_text": "想要将一些原子砸在一起吗？这本目录将介绍您在炼金术过程中可以制造的机器。"
+}

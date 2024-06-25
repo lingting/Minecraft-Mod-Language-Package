@@ -16,6 +16,8 @@
   "affix.apotheosis:common_reach.prefix": "加长的",
   "info.apotheosis.affix_item": "神化词缀物品",
   "item.modifiers.both_hands": "在任意手时：",
+  "text.apotheosis.dust_cost": "%s 灰尘",
+  "text.apotheosis.mat_cost": "%s 材料",
   "affix.apotheosis:reach_distance.name": "触及距离 - （%s）",
   "affix.apotheosis:enchantability.name": "附魔能力 - （%s）",
   "affix.apotheosis:draw_speed.name": "拉弓速度 - （%s%%）",
