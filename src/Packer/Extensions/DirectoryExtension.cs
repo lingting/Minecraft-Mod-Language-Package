@@ -28,18 +28,18 @@ namespace Packer.Extensions
         /// <returns>一个<see cref="Tuple"/>，第一参数为提供器的目标</returns>
         public delegate EvaluatorReturnType
             ProviderEvaluator(DirectoryInfo namespaceDirectory,
-                              Config config,
-                              ParameterType? parameters);
+                Config config,
+                ParameterType? parameters);
 
         /// <summary>
         /// 从<see cref="PackerPolicyType"/>到加载方法<see cref="ProviderEvaluator"/>的查询表
         /// </summary>
         internal static Dictionary<PackerPolicyType, ProviderEvaluator> evaluatorPolicyMap = new()
         {
-            { PackerPolicyType.Direct, FromCurrentDirectory },      // 现场生成
-            { PackerPolicyType.Indirect, FromSpecifiedDirectory },  // 给定目录
-            { PackerPolicyType.Composition, FromComposition },      // 组合生成
-            { PackerPolicyType.Singleton, FromSingleton },          // 单项文件
+            { PackerPolicyType.Direct, FromCurrentDirectory }, // 现场生成
+            { PackerPolicyType.Indirect, FromSpecifiedDirectory }, // 给定目录
+            { PackerPolicyType.Composition, FromComposition }, // 组合生成
+            { PackerPolicyType.Singleton, FromSingleton }, // 单项文件
         };
 
         /// <summary>
@@ -52,48 +52,49 @@ namespace Packer.Extensions
         public static IEnumerable<IResourceFileProvider> EnumerateProviders
             (this DirectoryInfo namespaceDirectory, Config config)
             => from enumeratedPair in namespaceDirectory.EnumerateRawProviders(config)
-               group enumeratedPair by enumeratedPair.provider.Destination into providerGroup
-               select providerGroup.Aggregate(
-                   seed: null as IResourceFileProvider,
-                   (accumulate, next)
-                       => next.provider.ApplyTo(accumulate, next.options));
+                group enumeratedPair by enumeratedPair.provider.Destination
+                into providerGroup
+                select providerGroup.Aggregate(
+                    seed: null as IResourceFileProvider,
+                    (accumulate, next)
+                        => next.provider.ApplyTo(accumulate, next.options));
 
         /// <summary>
         /// 遍历未经合并的文件，用于递归调用
         /// </summary>
         internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
             => from policy in ConfigHelpers.RetrievePolicy(namespaceDirectory)
-               from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
-                   namespaceDirectory, config, policy.Parameters)
-               select enumeratedPair;
+                from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
+                    namespaceDirectory, config, policy.Parameters)
+                select enumeratedPair;
 
 
         internal static EvaluatorReturnType FromCurrentDirectory(DirectoryInfo namespaceDirectory,
-                                                                 Config config,
-                                                                 ParameterType? parameters)
+            Config config,
+            ParameterType? parameters)
         {
             var floatingConfig = ConfigHelpers.RetrieveLocalConfig(namespaceDirectory);
             var localConfig = config.Modify(floatingConfig);
 
             return from candidate in namespaceDirectory.EnumerateFiles("*", SearchOption.AllDirectories)
-                   let relativePath = Path.GetRelativePath(namespaceDirectory.FullName,
-                                                           candidate.FullName)
-                                          .NormalizePath()
-                   let fullPath = Path.GetRelativePath(".", candidate.FullName)
-                   let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
-                                         .NormalizePath()
-                   where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
-                   where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
-                       || relativePath.IsDomainForceIncluded(localConfig)           // [3] 包含domain -- font/ textures/
-                       || (destination.IsInTargetLanguage(localConfig)              // [4] 语言标记   -- 含zh_cn的
-                           && !relativePath.IsDomainForceExcluded(localConfig)))    // [5] 排除domain [暂无]
-                   let provider = CreateProviderFromFile(candidate, destination, localConfig)
-                   select (provider, GetOptions(parameters));
+                let relativePath = Path.GetRelativePath(namespaceDirectory.FullName,
+                        candidate.FullName)
+                    .NormalizePath()
+                let fullPath = Path.GetRelativePath(".", candidate.FullName)
+                let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+                    .NormalizePath()
+                where !relativePath.IsPathForceExcluded(localConfig) // [1] 排除路径   -- packer-policy等
+                where (relativePath.IsPathForceIncluded(localConfig) // [2] 包含路径   [单列]
+                       || relativePath.IsDomainForceIncluded(localConfig) // [3] 包含domain -- font/ textures/
+                       || (destination.IsInTargetLanguage(localConfig) // [4] 语言标记   -- 含zh_cn的
+                           && !relativePath.IsDomainForceExcluded(localConfig))) // [5] 排除domain [暂无]
+                let provider = CreateProviderFromFile(candidate, destination, localConfig)
+                select (provider, GetOptions(parameters));
         }
 
         internal static EvaluatorReturnType FromSpecifiedDirectory(DirectoryInfo namespaceDirectory,
-                                                                   Config config,
-                                                                   ParameterType? parameters)
+            Config config,
+            ParameterType? parameters)
         {
             var redirect = parameters!["source"].GetString();
             var namespaceName = namespaceDirectory.Name;
@@ -102,15 +103,15 @@ namespace Packer.Extensions
             Log.Debug("[Policy:Indirect]目标：{0}，源：{1}", namespaceName, redirect);
 
             return from candidate in redirectDirectory.EnumerateRawProviders(config)
-                   let provider = candidate.provider
-                                           .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
-                                                               namespaceName)
-                   select (provider, GetOptions(parameters));
+                let provider = candidate.provider
+                    .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
+                        namespaceName)
+                select (provider, GetOptions(parameters));
         }
 
         internal static EvaluatorReturnType FromComposition(DirectoryInfo namespaceDirectory,
-                                                            Config config,
-                                                            ParameterType? parameters)
+            Config config,
+            ParameterType? parameters)
         {
             var compositionPath = parameters!["source"].GetString();
             var type = parameters["destType"].GetString();
@@ -128,13 +129,13 @@ namespace Packer.Extensions
         }
 
         internal static EvaluatorReturnType FromSingleton(DirectoryInfo namespaceDirectory,
-                                                          Config config,
-                                                          ParameterType? parameters)
+            Config config,
+            ParameterType? parameters)
         {
             var singletonPath = parameters!["source"].GetString()!;
             var relativePath = parameters!["relativePath"].GetString()!;
             var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
-                                  .NormalizePath();
+                .NormalizePath();
 
             Log.Debug("[Policy:Singleton]目标：{0}，源：{1}", destination, singletonPath);
 
@@ -147,21 +148,32 @@ namespace Packer.Extensions
 
         internal static IResourceFileProvider CreateProviderFromFile(FileInfo file, string destination, Config config)
         {
-            var extension = file.Extension;
-            if (file.Directory!.Name == "lang")
+            try
             {
-                switch (extension)
+                var extension = file.Extension;
+                if (file.Directory!.Name == "lang")
                 {
-                    case ".json": return JsonMappingHelper.CreateFromFile(file, destination);
-                    case ".lang": return LangMappingHelper.CreateFromFile(file, destination);
+                    switch (extension)
+                    {
+                        case ".json": return JsonMappingHelper.CreateFromFile(file, destination);
+                        case ".lang": return LangMappingHelper.CreateFromFile(file, destination);
+                    }
+
+                    ;
+                }
+
+                return extension switch
+                {
+                    // 已知的文本文件类型
+                    ".txt" or ".json" or ".md" => TextFile.Create(file, destination),
+                    _ => new RawFile(file, destination)
                 };
             }
-            return extension switch
+            catch (Exception e)
             {
-                // 已知的文本文件类型
-                ".txt" or ".json" or ".md" => TextFile.Create(file, destination),
-                _ => new RawFile(file, destination)
-            };
+                Log.Debug("[Failed] 文件: {0}", file.FullName);
+                throw;
+            }
         }
 
         internal static ApplyOptions GetOptions(ParameterType? parameters)
