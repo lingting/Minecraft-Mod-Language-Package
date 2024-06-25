@@ -9,7 +9,7 @@
   "constructionwand.tooltip.shift": "按住 [SHIFT]",
   "constructionwand.tooltip.cores": "手杖核心：",
   "constructionwand.tooltip.core_tip": "在一个合成格中将核心与你的魔杖结合在一起。",
-  "constructionwand.option.cores": "",
+  "constructionwand.option.cores": "建筑魔杖选项.内核",
   "constructionwand.option.cores.constructionwand:default": "建筑核心",
   "constructionwand.option.cores.constructionwand:default.desc": "在面向你的一侧放置方块",
   "constructionwand.option.cores.constructionwand:core_angel": "§6天使核心",

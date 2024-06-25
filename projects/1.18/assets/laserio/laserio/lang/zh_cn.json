@@ -69,5 +69,10 @@
   "screen.laserio.true": "是",
   "screen.laserio.up": "上",
   "screen.laserio.weak": "弱信号",
-  "screen.laserio.west": "西"
+  "screen.laserio.west": "西",
+  "screen.laserio.and": "并且",
+  "screen.laserio.channel": "信道：",
+  "screen.laserio.or": "或",
+  "screen.laserio.redstonechannel": "红石信道：",
+  "screen.laserio.sensor": "传感器"
 }

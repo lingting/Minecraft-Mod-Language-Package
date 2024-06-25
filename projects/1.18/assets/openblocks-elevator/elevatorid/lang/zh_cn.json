@@ -21,5 +21,6 @@
   "screen.elevatorid.elevator.hide_arrow": "隐藏箭头",
   "screen.elevatorid.elevator.reset_camo": "移除伪装",
   "elevatorid.message.missing_xp": "你没有足够的经验值来进行传送",
-  "itemGroup.elevators_tab": "电梯"
+  "itemGroup.elevators_tab": "电梯",
+  "elevatorid.subtitle.camouflage": "电梯：伪装"
 }

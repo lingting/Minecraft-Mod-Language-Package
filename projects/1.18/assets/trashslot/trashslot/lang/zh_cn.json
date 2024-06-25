@@ -4,5 +4,22 @@
   "key.trashslot.delete": "删除物品",
   "key.trashslot.deleteAll": "删除所有同类型的物品",
   "key.categories.trashslot": "垃圾桶",
-  "trashslot.config.instantDeletion": "立即删除"
+  "trashslot.config.instantDeletion": "立即删除",
+  "trashcans.advancement.trash_can.description": "制作一个垃圾桶",
+  "trashcans.advancement.trash_can.title": "不要忘记回收",
+  "trashcans.advancement.ultimate_trash_can.description": "制作一个终极垃圾桶",
+  "trashcans.advancement.ultimate_trash_can.title": "终极垃圾桶",
+  "trashcans.block.energy_trash_can": "能量垃圾桶",
+  "trashcans.block.item_trash_can": "物品垃圾桶",
+  "trashcans.block.liquid_trash_can": "液体垃圾桶",
+  "trashcans.block.ultimate_trash_can": "终极垃圾桶",
+  "trashcans.energy_trash_can.info": "可以销毁能量，也可以限制能量传输速率",
+  "trashcans.gui.arrow.left": "减少能量限制",
+  "trashcans.gui.arrow.right": "增加能量限制",
+  "trashcans.gui.energy_trash_can.limit.change1": "SHIFT %s（按住SHIFT键）",
+  "trashcans.gui.energy_trash_can.limit.change2": "CTRL %s（按住CTRL键）",
+  "trashcans.gui.energy_trash_can.limit.change3": "CTRL 和 SHIFT %s",
+  "trashcans.item_trash_can.info": "可以虚空物品，还包含最多9个物品的过滤器",
+  "trashcans.liquid_trash_can.info": "可以虚空液体和气体，还包含最多9种流体的过滤器",
+  "trashcans.ultimate_trash_can.info": "可以虚空物品、液体和能量"
 }

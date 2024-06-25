@@ -1,0 +1,6 @@
+{
+    "gui.sophisticatedstorage.error.add.compression_incompatible_items": "这些插槽中的物品无法从前一个插槽压缩",
+    "gui.sophisticatedstorage.error.add.compression_no_space": "没有额外的插槽供该压缩升级管理",
+    "item.sophisticatedstorage.compression_upgrade": "压缩升级",
+    "item.sophisticatedstorage.compression_upgrade.tooltip": "自动压缩/解压缩物品"
+}

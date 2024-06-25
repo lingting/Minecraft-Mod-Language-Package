@@ -136,5 +136,7 @@
   "jer.new.moon": "新月",
   "jer.waxing_crescent.moon": "蛾眉月",
   "jer.first_quarter.moon": "上弦月",
-  "jer.waxing_gibbous.moon": "盈凸月"
+  "jer.waxing_gibbous.moon": "盈凸月",
+  "jer.worldgen.affectedByFortune": "（受幸运影响）",
+  "jer.worldgen.chance": "概率为 %s"
 }

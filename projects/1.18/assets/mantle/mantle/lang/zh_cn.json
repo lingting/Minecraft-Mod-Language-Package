@@ -20,5 +20,22 @@
   "command.mantle.dump_loot_modifiers.read_error": "读取全局战利品属性时出错",
   "command.mantle.tag.empty": "空",
   "command.mantle.tag_collection.not_found": "未知标签集合'%s'",
-  "command.mantle.tag.not_found": "未知%s标签'%s'"
+  "command.mantle.tag.not_found": "未知%s标签'%s'",
+  "block.mantle.tank.drained": "已排空 %s mb %s",
+  "block.mantle.tank.filled": "填充%s毫升%s",
+  "command.mantle.book_test.not_found": "未知ID为%s的书",
+  "command.mantle.dump_tag.success_log": "已将%s标签'%s'转储到'%s'",
+  "command.mantle.harvest_tiers.no_tag": "%s：无标签",
+  "command.mantle.harvest_tiers.success_list": "收获层次：",
+  "command.mantle.harvest_tiers.success_log": "将排序后的层次打印到控制台日志中",
+  "command.mantle.harvest_tiers.success_save": "将排序后的层次转储到'%s'",
+  "command.mantle.harvest_tiers.tag": "%s：方块标签%s",
+  "command.mantle.registry.not_found": "未知注册表'%s'",
+  "command.mantle.tag_preference.empty_tag": "没有%s标签%s的偏好设置",
+  "command.mantle.tag_preference.preference": "%s标签%s的优先值为%s",
+  "command.mantle.tags_for.no_targeted_block_entity": "未选择方块实体",
+  "gui.mantle.fluid.bucket": "%s 桶",
+  "gui.mantle.fluid.hold_shift": "按住§e§oShift§r§7以获取桶",
+  "gui.mantle.fluid.kilobucket": "%s kb",
+  "gui.mantle.fluid.millibucket": "%s mb"
 }

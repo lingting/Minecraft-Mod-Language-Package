@@ -1,0 +1,13 @@
+{
+    "block.functionalstorage.controller_extension": "控制器扩展",
+    "block.functionalstorage.fluid_1": "液体储物柜（1x1）",
+    "block.functionalstorage.fluid_2": "液体储物柜（1x2）",
+    "block.functionalstorage.fluid_4": "液体储物柜（2x2）",
+    "block.functionalstorage.mangrove_1": "红树储物柜（1x1）",
+    "block.functionalstorage.mangrove_2": "红树储物柜（1x2）",
+    "block.functionalstorage.mangrove_4": "红树储物柜（2x2）",
+    "block.functionalstorage.simple_compacting_drawer": "简易压缩储物柜",
+    "gui.functionalstorage.fluid": "液体：",
+    "storageupgrade.desc.fluid": "将储物柜液体存储乘以",
+    "storageupgrade.desc.item": "将储物柜物品存储乘以"
+}

@@ -1,3 +1,7 @@
 {
-  "packmenu.realms": "Realms被禁用"
+  "packmenu.realms": "Realms被禁用",
+  "packmenu.support": "支持",
+  "packmenu.support.modpack": "支持这个整合包！",
+  "packmenu.support1": "整合包菜单！",
+  "packmenu.supporters": "感谢您的支持！"
 }

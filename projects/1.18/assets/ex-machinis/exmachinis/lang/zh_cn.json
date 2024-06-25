@@ -41,11 +41,9 @@
     "tooltip.exmachinis.energyPerTick": "每Tick消耗RF：%sRF/t",
     "tooltip.exmachinis.fluxBar": "RF：",
     "tooltip.exmachinis.fluxData": "存储RF：%d/%d",
-    "tooltip.exmachinis.goldItemsProcessed": "2/4/8",
     "tooltip.exmachinis.hammer1": "RF能量驱动的自动锤",
     "tooltip.exmachinis.itemsProcessed": "物品处理数量：%s",
     "tooltip.exmachinis.meshSlot": "筛网槽",
-    "tooltip.exmachinis.netheriteItemsProcessed": "64",
     "tooltip.exmachinis.player": "玩家：%s",
     "tooltip.exmachinis.processingTime": "处理时间：%dticks",
     "tooltip.exmachinis.progress": "进度：%d/%d秒",
@@ -53,5 +51,7 @@
     "tooltip.exmachinis.stackSize": "升级数量：%s",
     "tooltip.exmachinis.upgradeSlot": "升级槽",
     "tooltip.exmachinis.workBar": "工作进度：",
-    "tooltip.exmachinis.workData": "%d/%dticks"
+    "tooltip.exmachinis.goldItemsProcessed": "黄金物品处理数：2/4/8",
+    "tooltip.exmachinis.netheriteItemsProcessed": "下界合金物品处理数：64",
+    "tooltip.exmachinis.workData": "已工作时间：%d/%d ticks"
   }

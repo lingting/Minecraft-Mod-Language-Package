@@ -47,5 +47,11 @@
   "tip.set_anchors": "点击任何一个锚点按钮（有编号的），然后点击类似标记的按钮（在右边）来设置锚点位置",
   "tip.modify_anchors": "一旦设置了锚点，你可以随时点击标记按钮来移动位置",
   "tip.modify_anchors_2": "一旦你设定了位置，就可以改变锚点的名称和范围",
-  "tip.reset_recent_sounds": "在“最近”声音界面上按住Shift，然后点击垃圾桶按钮来清除最近的声音列表"
+  "tip.reset_recent_sounds": "在“最近”声音界面上按住Shift，然后点击垃圾桶按钮来清除最近的声音列表",
+  "log.error.loadAnchorList": "ESM：加载锚点列表时出错：n %s",
+  "log.error.loadMuffledList": "ESM：加载被消音声音列表时出错：n %s",
+  "log.error.saveAnchorList": "ESM：保存锚点列表时出错：n %s",
+  "log.error.saveMuffledList": "ESM：保存被消音声音列表时出错：n %s",
+  "log.warn.loadAnchorList": "ESM：未找到锚点列表；创建空的锚点列表",
+  "log.warn.loadMuffledList": "ESM：未找到消音列表；创建空的消音列表"
 }

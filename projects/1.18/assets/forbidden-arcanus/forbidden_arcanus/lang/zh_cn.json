@@ -151,7 +151,6 @@
   "block.forbidden_arcanus.nipa": "水椰",
   "block.forbidden_arcanus.fungyss": "魔菇",
   "block.forbidden_arcanus.fungyss_block": "魔菇方块",
-  "____comment": "Items",
   "item.forbidden_arcanus.forbiddenmicon": "禁忌之书",
   "item.forbidden_arcanus.stellarite_piece": "流星碎片",
   "item.forbidden_arcanus.arcane_gold_ingot": "神秘金锭",
@@ -275,7 +274,6 @@
   "item.forbidden_arcanus.netherite_blacksmith_gavel": "下界合金锻工锤",
   "item.forbidden_arcanus.arcane_golden_blacksmith_gavel": "神秘金锻工锤",
   "item.forbidden_arcanus.reinforced_arcane_golden_blacksmith_gavel": "强化神秘金锻工锤",
-  "comment.tooltips": "---Tooltips---",
   "tooltip.forbidden_arcanus.forbiddenmicon": "这本《禁忌之书》尚无法阅读",
   "tooltip.forbidden_arcanus.obsidian_skull": "使你在30秒内免受火焰伤害。",
   "tooltip.forbidden_arcanus.obsidian_skull_shield": "使你在30秒内免受火焰伤害。",
@@ -300,7 +298,6 @@
   "enchantments": "附魔",
   "enchantment.forbidden_arcanus.permafrost": "永冻",
   "enchantment.forbidden_arcanus.indestructible": "坚不可摧",
-  "comment.enchantment.descriptions": "---Enchantment Descriptions---",
   "enchantment.forbidden_arcanus.permafrost.desc": "能够让埃德木桶安全地盛装熔岩。",
   "modifier.forbidden_arcanus.eternal": "永恒",
   "modifier.forbidden_arcanus.fiery": "炙热",
@@ -320,7 +317,6 @@
   "forbidden_arcanus.souls": "灵魂",
   "forbidden_arcanus.blood": "血",
   "forbidden_arcanus.experience": "经验",
-  "guis_comment": "Guis",
   "gui.forbidden_arcanus.hephaestus_forge.unlocked_at_level": "解锁等级",
   "jei.forbidden_arcanus.category.hephaestusSmithing": "赫菲斯托斯锻造",
   "jei.forbidden_arcanus.hephaestusSmithing.requiredPedestal": "需要基座",
@@ -328,5 +324,9 @@
   "jei.forbidden_arcanus.hephaestusSmithing.requiredAureal": "需要耀金",
   "jei.forbidden_arcanus.hephaestusSmithing.requiredSouls": "需要灵魂",
   "jei.forbidden_arcanus.hephaestusSmithing.requiredBlood": "需要血",
-  "jei.forbidden_arcanus.hephaestusSmithing.requiredExperience": "需要经验"
+  "jei.forbidden_arcanus.hephaestusSmithing.requiredExperience": "需要经验",
+  "comment.enchantment.descriptions": "---附魔描述---",
+  "comment.tooltips": "---工具提示---",
+  "____comment": "物品",
+  "guis_comment": "界面"
 }

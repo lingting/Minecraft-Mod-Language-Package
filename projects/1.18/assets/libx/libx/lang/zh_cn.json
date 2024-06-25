@@ -17,7 +17,6 @@
   "libx.config.gui.list.title": "列表",
   "libx.config.gui.list.new": "新元素",
   "libx.config.gui.select.title": "选择",
-  "libx.config.gui.map.title": "Map",
   "libx.config.gui.map.new": "新条目",
   "libx.config.gui.resource_list.title": "资源列表",
   "libx.config.gui.resource_list.info": "资源列表的更多信息",
@@ -45,9 +44,10 @@
   "libx.config.gui.component.underlined": "下划线：%s",
   "libx.config.gui.component.strikethrough": "删除线：%s",
   "libx.config.gui.component.obfuscated": "模糊：%s",
-  "libx.config.gui.component.siblings": "Siblings",
-  "libx.config.gui.component.arguments": "Arguments",
   "libx.config.gui.component.type_text": "文本",
   "libx.config.gui.component.type_translate": "翻译",
-  "libx.config.gui.component.type_key": "按键设置"
+  "libx.config.gui.component.type_key": "按键设置",
+  "libx.config.gui.component.arguments": "参数",
+  "libx.config.gui.component.siblings": "兄弟组件",
+  "libx.config.gui.map.title": "映射"
 }
