@@ -26,5 +26,7 @@
   "tooltip.farmingforblockheads:fertilizer_stable": "防止被踩坏",
   "tooltip.farmingforblockheads:trait_stable": "防止被踩坏",
   "tooltip.farmingforblockheads:trait_healthy": "加速生长",
-  "tooltip.farmingforblockheads:trait_rich": "增加作物产出"
+  "tooltip.farmingforblockheads:trait_rich": "增加作物产出",
+  "entity.farmingforblockheads.merchant": "商人",
+  "farmingforblockheads.subtitle.falling": "有东西从高处掉落"
 }

@@ -15,5 +15,9 @@
   "text.observable.overlay": "在主世界展示资源占用",
   "text.observable.docs": "Wiki",
   "text.observable.discord": "Discord",
-  "text.observable.donate": "捐赠"
+  "text.observable.donate": "捐赠",
+  "text.observable.profile_saved": "配置文件已本地保存至%s",
+  "text.observable.sampler": "带采样器的配置文件（增加开销）",
+  "text.observable.suggest": "似乎您的服务器运行有些缓慢（%s tps）。%s以查找延迟源。",
+  "text.observable.suggest_action": "考虑使用可观察"
 }

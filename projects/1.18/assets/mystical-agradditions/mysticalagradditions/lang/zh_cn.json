@@ -90,5 +90,6 @@
   "modifier.mysticalagradditions.prosperous.description": "工具和武器有几率掉落活化水晶碎片。",
   "modifier.mysticalagradditions.soul_siphoner": "灵魂汲取",
   "modifier.mysticalagradditions.soul_siphoner.flavor": "有灵魂的！",
-  "modifier.mysticalagradditions.soul_siphoner.description": "武器可以像灵魂匕首一样吸取生物的灵魂。"
+  "modifier.mysticalagradditions.soul_siphoner.description": "武器可以像灵魂匕首一样吸取生物的灵魂。",
+  "book.mysticalagriculture.entry.insanium.page.1": "狂灵精华是高于至尊的额外精华等级。它用于创建6级作物。$(br2)6级作物具有一些低等级作物没有的独特特点：$(br)$(li)它们的种植下方需要一个$(l：mysticalagradditions：agradditions/cruxes)十字$()来生长。$() $(li)当收获时，它们永远不会掉落第二颗种子。$()"
 }

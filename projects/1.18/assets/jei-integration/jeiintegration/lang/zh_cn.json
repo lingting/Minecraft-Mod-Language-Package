@@ -17,5 +17,7 @@
   "tooltip.jeiintegration.nbtTagData": "NBT：",
   "tooltip.jeiintegration.registryName": "ID：",
   "tooltip.jeiintegration.tags": "标签：",
-  "tooltip.jeiintegration.translationKey": "翻译键："
+  "tooltip.jeiintegration.translationKey": "翻译键：",
+  "config.jeiintegration.tooltips.enchantabilityTooltipMode": "附魔能力提示模式",
+  "tooltip.jeiintegration.enchantability": "附魔能力："
 }

@@ -37,5 +37,22 @@
   "enchantment.minecraft.quick_charge.desc": "增加弩的装填速度。",
   "enchantment.minecraft.piercing.desc": "允许弩箭穿透生物。",
   "enchantment.minecraft.soul_speed.desc": "增加灵魂急行的移动速度。",
-  "enchdesc.jei.compatible_items.title": "兼容物品"
+  "enchdesc.jei.compatible_items.title": "兼容物品",
+  "enchantment.exenchants.bad_doings.desc": "有时赋予用户运气减益。",
+  "enchantment.exenchants.charge_up.desc": "有时在赋予用户虚弱后给予大力量增益。",
+  "enchantment.exenchants.empowerment.desc": "随机给用户提供力量增益效果。",
+  "enchantment.exenchants.explosion.desc": "武器可以产生无伤害的爆炸。",
+  "enchantment.exenchants.flame_thorns.desc": "有几率让攻击者着火。",
+  "enchantment.exenchants.fleet_foot.desc": "当用户的健康值较低时赋予用户速度提升。",
+  "enchantment.exenchants.fulmination.desc": "武器可以对对手召唤雷电。",
+  "enchantment.exenchants.haste_escape.desc": "当用户的健康值较低时赋予用户挖掘速度提升。",
+  "enchantment.exenchants.ice_thorns.desc": "有几率让攻击者减速。",
+  "enchantment.exenchants.icicle.desc": "有几率给敌人附加减速减益效果。",
+  "enchantment.exenchants.levitation_curse.desc": "有时会给予玩家浮空减益效果。",
+  "enchantment.exenchants.medicsaid.desc": "当玩家生命值较低时，会略微恢复生命。",
+  "enchantment.exenchants.slowness_curse.desc": "有时赋予用户减速减益。",
+  "enchantment.exenchants.toxicity.desc": "武器会说出对你的对手感到尴尬的话。",
+  "enchantment.gofish.deepfry.desc": "钓到特定的鱼类将会将它们烹饪。",
+  "enchdesc.activate.message": "按住Shift键查看附魔描述。",
+  "__comment_jei": "JEI兼容性"
 }

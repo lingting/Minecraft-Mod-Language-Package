@@ -1,0 +1,11 @@
+{
+    "hostilenetworks.color_text.hud": "头盔显示",
+    "hostilenetworks.color_text.shift": "切换",
+    "hostilenetworks.fail.energy_mid_cycle": "模拟进度暂停\n系统能量水平临界",
+    "hostilenetworks.gui.energy": "%s/%s 元能",
+    "hostilenetworks.gui.variant": "%s（变种）",
+    "hostilenetworks.info.no_base_drop": "没有基础掉落产生",
+    "hostilenetworks.info.rft": "%s FE/刻",
+    "hostilenetworks.info.subtypes": "变种：",
+    "itemGroup.hostilenetworks": "敌对神经网络"
+}

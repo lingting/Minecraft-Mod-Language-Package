@@ -14,5 +14,5 @@
   "ftbultimine.shape.escape_tunnel": "逃生隧道",
   "ftbultimine.config": "FTB Ultimine配置",
   "item.ftbultimine.ultiminer": "Ultiminer",
-  "item.ftbultimine.ultiminer.tooltip": "激活时允许使用%s"
+  "item.ftbultimine.ultiminer.tooltip": "激活时允许使用%s",
 }

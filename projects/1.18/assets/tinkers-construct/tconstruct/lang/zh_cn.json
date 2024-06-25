@@ -1,0 +1,6 @@
+{
+    "modifier.tconstruct.blast_protection.flavor": "啊，太糟糕了！",
+    "modifier.tconstruct.the_one_probe": "The One Probe（探测器）",
+    "tool_stat.tconsturct.projectile_damage.description": "确定该武器发射的抛射物的基础伤害。",
+    "_comment_on_format_": "这些格式允许您更好地控制材料名称中的分隔符。默认情况下，我们使用空格进行分隔。如果您希望更改顺序，可以使用%1$s和%2$s。"
+}
