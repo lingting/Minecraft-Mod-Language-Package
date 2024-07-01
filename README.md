@@ -22,6 +22,13 @@
 
 该项目的目的是解决模组作者不接收翻译、翻译更新速度慢等诸多问题。
 
+### 分支说明
+
+- `main` 用于发布资源包以及ci
+- `cfpa` 用于定时同步 CPFAorg/main 分支
+- `upstream` 用于手动同步 CPFAorg 的部分pr
+- `machine` 用于添加部分机翻
+
 ## 如何使用
 
 注意：部分[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/download/8906.html)才能完整应用到游戏中。
