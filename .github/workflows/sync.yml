@@ -1,0 +1,41 @@
+name: Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'cfpa'
+
+      - name: force sync
+        run: |
+          git remote add upstream https://github.com/CFPAOrg/Minecraft-Mod-Language-Package.git
+          git fetch upstream main
+          git fetch origin cfpa
+          git reset --hard upstream/main
+          hasDiff=false
+          # 有输出则说明有更新, 后续步骤需要推送然后提交pr
+          git diff --quiet origin/cfpa || hasDiff=true
+          echo hasDiff=$hasDiff >> $GITHUB_OUTPUT
+
+      - name: push
+        if: steps.sync.outputs.hasDiff == 'true'
+        run: |
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git push origin cfpa
+
+      - name: pr
+        if: steps.sync.outputs.hasDiff == 'true'
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: main
+          title: Sync with ci from cfpa
+          token: ${{ secrets.GITHUB_TOKEN }}
