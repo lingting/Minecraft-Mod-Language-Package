@@ -26,13 +26,16 @@ jobs:
           echo "hasDiff="$hasDiff >> $GITHUB_OUTPUT
           echo "hasDiff="$hasDiff
 
-      - if: steps.fs.outputs.hasDiff == 'true'
-        id: pr
-        uses: peter-evans/create-pull-request@v4
+      - name: push
+        if: steps.fs.outputs.hasDiff == 'true'
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
           git push origin cfpa
+
+      - if: steps.fs.outputs.hasDiff == 'true'
+        id: pr
+        uses: peter-evans/create-pull-request@v4
         with:
           branch: main
           title: Sync by ci from cfpa
