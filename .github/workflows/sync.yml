@@ -37,16 +37,13 @@ jobs:
           git push origin cfpa
           # 获取当前仓库的完整名称（owner/repo）
           REPO=$(echo "${{ github.repository }}" | sed 's/\\//g')
-          echo "REPO: "$REPO
           # 准备请求体，包含标题、描述等信息
           BODY="{\"title\":\"Auto-PR: Changes from cfpa to main\",\"head\":\"cfpa\",\"base\":\"main\",\"body\":\"This PR is created by GitHub Actions.\"}" 
-          echo "BODY: "BODY
           # 使用curl发起POST请求到GitHub API创建PR
           PR_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
             --header 'Content-Type: application/json' \
             --data "$BODY" \
             https://api.github.com/repos/$REPO/pulls)
-          echo "PR_RESPONSE: "$PR_RESPONSE
           # 提取PR ID
           PR_ID=$(echo "$PR_RESPONSE" | jq -r .number)
           # 检查PR_ID是否为null
@@ -58,10 +55,9 @@ jobs:
           echo "Created Pull Request with ID: $PR_ID"
           # 合并pr的请求提
           MERGE_BODY="{\"merge_method\":\"merge\"}"
-          echo "MERGE_BODY: "$MERGE_BODY
           MERGE_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
             --header 'Content-Type: application/json' \
-            --data "$BODY" \
+            --data "$MERGE_BODY" \
+            -X PUT \
             https://api.github.com/repos/$REPO/pulls/$PR_ID/merge)
-          echo "MERGE_RESPONSE: "$MERGE_RESPONSE
           fi
