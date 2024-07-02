@@ -15,27 +15,32 @@ jobs:
           ref: 'cfpa'
 
       - name: force sync
+        id: fs
         run: |
           git remote add upstream https://github.com/CFPAOrg/Minecraft-Mod-Language-Package.git
           git fetch upstream main
           git fetch origin cfpa
           git reset --hard upstream/main
-          hasDiff=false
           # 有输出则说明有更新, 后续步骤需要推送然后提交pr
           git diff --quiet origin/cfpa || hasDiff=true
-          echo hasDiff=$hasDiff >> $GITHUB_OUTPUT
+          echo "hasDiff="$hasDiff >> $GITHUB_OUTPUT
+          echo "hasDiff="$hasDiff
 
-      - name: push
-        if: steps.sync.outputs.hasDiff == 'true'
+      - if: steps.fs.outputs.hasDiff == 'true'
+        id: pr
+        uses: peter-evans/create-pull-request@v4
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
           git push origin cfpa
-
-      - name: pr
-        if: steps.sync.outputs.hasDiff == 'true'
-        uses: peter-evans/create-pull-request@v4
         with:
           branch: main
-          title: Sync with ci from cfpa
+          title: Sync by ci from cfpa
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: steps.fs.outputs.hasDiff == 'true' && steps.pr.outputs.pull-request-number
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          merge-method: merge
+          pull-request-number: ${{ steps.pr.outputs.pull-request-number }}
           token: ${{ secrets.GITHUB_TOKEN }}
