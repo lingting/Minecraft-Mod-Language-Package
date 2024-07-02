@@ -38,7 +38,6 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: cfpa
-          base: main
           title: Sync by ci from cfpa
           token: ${{ secrets.GITHUB_TOKEN }}
 
