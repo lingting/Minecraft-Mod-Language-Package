@@ -44,6 +44,7 @@ jobs:
             --header 'Content-Type: application/json' \
             --data "$BODY" \
             https://api.github.com/repos/$REPO/pulls)
+          echo $PR_RESPONSE
           # 提取PR ID
           PR_ID=$(echo "$PR_RESPONSE" | jq -r .number)
           # 输出PR ID到Actions日志
