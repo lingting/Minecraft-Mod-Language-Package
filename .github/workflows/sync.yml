@@ -11,29 +11,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: 'cfpa'
 
       - name: force sync
         id: fs
         run: |
           git remote add upstream https://github.com/CFPAOrg/Minecraft-Mod-Language-Package.git
           git fetch upstream main
-          git checkout -b cfpa upstream/main
+          git fetch origin cfpa
+          git reset --hard upstream/main
+          # 有输出则说明有更新, 后续步骤需要推送然后提交pr
+          git diff --quiet origin/cfpa || hasDiff=true
+          echo "hasDiff="$hasDiff >> $GITHUB_OUTPUT
+          echo "hasDiff="$hasDiff
+
+      - name: cpr
+        id: cpr
+        if: steps.fs.outputs.hasDiff == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           git config user.name github-actions
           git config user.email actions@github.com
           git push origin cfpa
+          # 获取当前仓库的完整名称（owner/repo）
+          REPO=$(echo "${{ github.repository }}" | sed 's/\\//g')
+          # 准备请求体，包含标题、描述等信息
+          BODY="{\"title\":\"Auto-PR: Changes from cfpa to main\",\"head\":\"${{ github.head_ref }}\",\"base\":\"main\",\"body\":\"This PR is created by GitHub Actions.\"}" 
+          # 使用curl发起POST请求到GitHub API创建PR
+          PR_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
+            --header 'Content-Type: application/json' \
+            --data "$BODY" \
+            https://api.github.com/repos/$REPO/pulls)
+          # 提取PR ID
+          PR_ID=$(echo "$PR_RESPONSE" | jq -r .number)
+          # 输出PR ID到Actions日志
+          echo "Created Pull Request with ID: $PR_ID"
+          # 将PR ID设置为输出变量，供后续步骤使用
+          echo "number="$PR_ID >> $GITHUB_OUTPUT
 
-      - id: pr
-        uses: peter-evans/create-pull-request@v4
-        with:
-          branch: cfpa/sync
-          delete-branch: true
-          branch-suffix: timestamp
-          title: Sync by ci from cfpa
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - if: steps.pr.outputs.pull-request-number
+      - if: steps.fs.outputs.hasDiff == 'true' && steps.cpr.outputs.number
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           merge-method: merge
-          pull-request-number: ${{ steps.pr.outputs.pull-request-number }}
+          pull-request-number: ${{ steps.cpr.outputs.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
