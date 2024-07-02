@@ -47,12 +47,18 @@ jobs:
           echo $PR_RESPONSE
           # 提取PR ID
           PR_ID=$(echo "$PR_RESPONSE" | jq -r .number)
+          # 检查PR_ID是否为null
+          if [ "$PR_ID" == "null" ]; then
+          echo "Error: Failed to create Pull Request, received null as PR ID."
+          exit 1  # 终止步骤执行，并标记此步骤为失败
+          else
           # 输出PR ID到Actions日志
           echo "Created Pull Request with ID: $PR_ID"
           # 将PR ID设置为输出变量，供后续步骤使用
           echo "number="$PR_ID >> $GITHUB_OUTPUT
-
-      - if: steps.fs.outputs.hasDiff == 'true' && steps.cpr.outputs.number
+          fi
+        
+      - if: steps.cpr.outputs.number
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           merge-method: merge
