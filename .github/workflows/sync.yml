@@ -60,4 +60,18 @@ jobs:
             --data "$MERGE_BODY" \
             -X PUT \
             https://api.github.com/repos/$REPO/pulls/$PR_ID/merge)
+          MERGED = $(echo "$PR_RESPONSE" | jq -r .merged)
+          echo "Merge flag: $MERGED"
+          echo "merged="$MERGED >> $GITHUB_OUTPUT
           fi
+
+
+    outputs:
+      merged: ${{ steps.cpr.outputs.merged }}
+
+  release:
+    name: Release By Merged
+    uses: ./.github/workflows/sync.yml
+    needs: [ sync ]
+    if: needs.sync.outputs.merged == 'true'
+      
