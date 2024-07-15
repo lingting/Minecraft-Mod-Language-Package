@@ -48,16 +48,22 @@ jobs:
           PR_ID=$(echo "$PR_RESPONSE" | jq -r .number)
           # 检查PR_ID是否为null
           if [ "$PR_ID" == "null" ]; then
-          echo "Error: Failed to create Pull Request, received null as PR ID."
-          exit 1  # 终止步骤执行，并标记此步骤为失败
+            echo "Error: Failed to create Pull Request, received null as PR ID."
+            exit 1  # 终止步骤执行，并标记此步骤为失败
           else
-          # 输出PR ID到Actions日志
-          echo "Created Pull Request with ID: $PR_ID"
-          # 合并pr的请求提
-          MERGE_BODY="{\"merge_method\":\"merge\"}"
-          MERGE_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
-            --header 'Content-Type: application/json' \
-            --data "$MERGE_BODY" \
-            -X PUT \
-            https://api.github.com/repos/$REPO/pulls/$PR_ID/merge)
+            # 输出PR ID到Actions日志
+            echo "Created Pull Request with ID: $PR_ID"
+            # 合并pr的请求提
+            MERGE_BODY="{\"merge_method\":\"merge\"}"
+            MERGE_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
+              --header 'Content-Type: application/json' \
+              --data "$MERGE_BODY" \
+              -X PUT \
+              https://api.github.com/repos/$REPO/pulls/$PR_ID/merge)
+            MERGED = $(echo "$MERGE_RESPONSE" | jq -r .merged)
+            echo "Merge flag: $MERGED"
+            if [ "$MERGED" != "true" ]; then
+              echo "Merge not successful, exiting the job."
+              exit 1
+            fi
           fi
