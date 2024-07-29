@@ -60,10 +60,18 @@ jobs:
               --data "$MERGE_BODY" \
               -X PUT \
               https://api.github.com/repos/$REPO/pulls/$PR_ID/merge)
-            MERGED = $(echo "$MERGE_RESPONSE" | jq -r .merged)
+            MERGED=$(echo "$MERGE_RESPONSE" | jq -r .merged)
             echo "Merge flag: $MERGED"
             if [ "$MERGED" != "true" ]; then
               echo "Merge not successful, exiting the job."
               exit 1
             fi
+            # 发起发布的ci
+            RELEASE_BODY="{\"ref\":\"main\",\"inputs\":{}"
+            RELEASE_RESPONSE=$(curl --silent --header "Authorization: Bearer $GITHUB_TOKEN" \
+              --header 'Content-Type: application/json' \
+              --data "$RELEASE_BODY" \
+              -X POST \
+              https://api.github.com/repos/$REPO/actions/workflows/release.yml/dispatches )
+            echo "Release: $RELEASE_RESPONSE"
           fi
