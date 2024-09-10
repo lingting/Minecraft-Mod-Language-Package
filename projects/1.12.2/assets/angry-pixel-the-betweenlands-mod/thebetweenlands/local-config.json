@@ -1,7 +1,9 @@
 {
-    "inclusionDomains": ["ae2guide-disable"],
+    "inclusionDomains": [],
     "exclusionDomains": [],
-    "exclusionPaths": [],
+    "exclusionPaths": [
+        "lang/zh_cn-composition.json"
+    ],
     "inclusionPaths": [],
     "characterReplacement": {},
     "destinationReplacement": {}
