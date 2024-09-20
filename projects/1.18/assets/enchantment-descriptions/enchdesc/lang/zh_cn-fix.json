@@ -13,5 +13,8 @@
   "enchantment.exenchants.bad_doings.desc": "偶尔为玩家提供幸运减益。",
   "enchantment.exenchants.levitation_curse.desc": "偶尔给予玩家飘浮效果。",
   "enchantment.exenchants.empowerment.desc": "随机给予玩家力量效果。",
-  "enchantment.exenchants.charge_up.desc": "偶尔给予玩家虚弱效果，结束后获得强力的力量效果。"
+  "enchantment.exenchants.charge_up.desc": "偶尔给予玩家虚弱效果，结束后获得强力的力量效果。",
+  "enchantment.gofish.deepfry.desc": "钓到特定的鱼类将会将它们烹饪。",
+  "enchdesc.activate.message": "按住Shift键查看附魔描述。",
+  "__comment_jei": "JEI兼容性"
 }
